@@ -3,7 +3,9 @@ WikiWeb
 
 ###browser_action
 (send)
+
 On start, post message 
+
 On stop, save and kill background listener
 
 ###background_action
