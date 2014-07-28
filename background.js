@@ -27,4 +27,9 @@ function checkTabStatus(tabId, changeInfo, tab)
 
 chrome.tabs.onUpdated.addListener(checkTabStatus)
 
-
+function storeStuff(graph) {
+	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+	xmlhttp.open("POST", "https://wikiweb.firebaseio.com/");
+	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	xmlhttp.send(JSON.stringify({surf : graph}));
+}
