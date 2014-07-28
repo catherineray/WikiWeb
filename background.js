@@ -26,7 +26,6 @@ function checkTabStatus(tabId, changeInfo, tab)
 	}
 }
 
-
 function storeStuff(graph) {
 	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
 	xmlhttp.open("POST", "https://wikiweb.firebaseio.com/.json");
