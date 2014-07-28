@@ -6,6 +6,7 @@ chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
 graph = []
 function checkTabStatus(tabId, changeInfo, tab) 
 {
+	console.log("make sure the train is fine")
 	if (changeInfo.url!=undefined) 
 	{
 		chrome.tabs.query
@@ -25,12 +26,24 @@ function checkTabStatus(tabId, changeInfo, tab)
 	}
 }
 
-chrome.tabs.onUpdated.addListener(checkTabStatus)
+
 
 function storeStuff(graph) {
 	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
 	xmlhttp.open("POST", "https://wikiweb.firebaseio.com/.json");
 	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-	xmlhttp.send(JSON.stringify({surf : graph}));
+	xmlhttp.send(JSON.stringify({data : graph, timestamp : Date.now()}));
 }
+
+chrome.extension.onRequest.addListener(
+	function(request, sender, sendResponse) {
+		if (request.greeting == "start") {
+			chrome.tabs.onUpdated.addListener(checkTabStatus)
+			sendResponse({farewell: "tschuss"});
+		}
+		if (request.greeting == "stop") {
+			chrome.tabs.onUpdated.removeListener(checkTabStatus)
+			storeStuff(graph)
+		}
+	});
