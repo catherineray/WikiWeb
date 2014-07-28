@@ -27,18 +27,20 @@ function checkTabStatus(tabId, changeInfo, tab)
 }
 
 
-
 function storeStuff(graph) {
 	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
 	xmlhttp.open("POST", "https://wikiweb.firebaseio.com/.json");
 	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-	xmlhttp.send(JSON.stringify({data : graph, timestamp : Date.now()}));
+	xmlhttp.send(JSON.stringify({data : graph, timestamp : Date.now(), name : graphName}));
 }
 
 chrome.extension.onRequest.addListener(
 	function(request, sender, sendResponse) {
+		//init that shit
 		if (request.greeting == "start") {
+			console.log(request)
+			graphName = request.name
 			chrome.tabs.onUpdated.addListener(checkTabStatus)
 			sendResponse({farewell: "tschuss"});
 		}
