@@ -7,20 +7,20 @@ WikiWeb
 3. Have a party
 4. Hit stop
 5. Click, in the folder, datgraph.html
+6. Viola! Navigate as you please.
 ![alt tag](ooohshiny.png)
 
-###browser_action
-(send)
 
-On start, post message 
+###Components of Code
+####browser_action
+- On start, post message 
+- On stop, save and kill background listener
 
-On stop, save and kill background listener
-
-###background_action
+####background_action
 - Post message listener
 - check url, append to array
 - stores lists on firebase
 
-###other
+####other
 - UI
 - directed graph, using timestamp to orient arrows
