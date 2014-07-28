@@ -29,7 +29,8 @@ chrome.tabs.onUpdated.addListener(checkTabStatus)
 
 function storeStuff(graph) {
 	var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-	xmlhttp.open("POST", "https://wikiweb.firebaseio.com/");
+	xmlhttp.open("POST", "https://wikiweb.firebaseio.com/.json");
 	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
 	xmlhttp.send(JSON.stringify({surf : graph}));
 }
