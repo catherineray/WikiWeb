@@ -7,7 +7,7 @@ WikiWeb
 3. Have a party
 4. Hit stop
 5. Click, in the folder, datgraph.html
-6. Fin
+![alt tag](ooohshiny.png)
 
 ###browser_action
 (send)
