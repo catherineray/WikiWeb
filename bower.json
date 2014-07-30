@@ -1,0 +1,13 @@
+{
+  "name": "wikiweb",
+  "version": "0.0.0",
+  "dependencies": {
+    "d3": "~3.4.11",
+    "pouchdb": "~2.2.3",
+    "colorbrewer": "~1.0.0",
+    "angular": "~1.2.21",
+    "angular-moment": "~0.8.0",
+    "angular-xeditable": "~0.1.8"
+  },
+  "devDependencies": {}
+}

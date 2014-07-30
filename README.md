@@ -1,26 +1,14 @@
 WikiWeb
 =======
+###Building
+- npm install -g bower
+- bower install
+
 ###Track your wikipedia surfing!
 0. Download the folder, open it in Chrome extensions
 1. Click the icon
-2. Hit start
+2. Hit record
 3. Have a party
 4. Hit stop
-5. Click, in the folder, datgraph.html
-6. Viola! Navigate as you please.
-![alt tag](ooohshiny.png)
-
-
-###Components of Code
-####browser_action
-- On start, post message 
-- On stop, save and kill background listener
-
-####background_action
-- Post message listener
-- check url, append to array
-- stores lists on firebase
-
-####other
-- UI
-- directed graph, using timestamp to orient arrows
+5. Click "Past sessions"
+![WikiWeb Screenshot](screenshot.png)

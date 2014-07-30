@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Wikiweb</title>
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link href="bower_components/angular/angular-csp.css" rel="stylesheet">
+    <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link href="styles/main.css" rel="stylesheet">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+  </head>
+  <body class="options--page" ng-app="wikiweb" ng-csp ng-controller="MainCtrl">
+    <h1>WikiWeb</h1>
+  
+    <!-- <div class="options--search">
+      <input type="text" placeholder="Search">
+    </div> -->
+
+    {{orderdSessions.length}}
+
+    <h5 class="centered" ng-if="sessions.length === 0">No sessions.</h5>
+
+    <div class="paper"
+      ng-repeat="sesh in orderedSessions"
+      ng-controller="PaperCtrl">
+      <div class="paper--body">
+        <h2 class="paper--title">
+          <a href="#" editable-text="sesh.doc.name" onbeforesave="save($data)">{{sesh.doc.name || "Untitled"}}</a>
+        </h2>
+        <h4 title="{{sesh.doc.pages.length}} pages"><i class="ion-document"></i> {{sesh.doc.pages.length}} <i class="ion-android-clock"></i> <span am-time-ago="sesh.doc.timestamp"></span></h4>
+        <h2 class="paper--link">
+          <a ng-href="{{currLink}}" target="_blank">{{(currTitle | truncate:32) || "Hover to see titles"}}</a>
+        </h2>
+        <web-viz pages="sesh.doc.pages" links="sesh.doc.links"></web-viz>
+      </div>
+      <a class="paper--open" ng-click="toggleDropdown()"><i class="ion-share"></i></a>
+      <ul class="paper--dropdown" ng-show="dropToggle">
+        <li ng-click="log()">Log to Console</li>
+        <li ng-click="reopen()">Reopen session</li>
+        <li ng-click="delete($index)">Delete session</li>
+        <!-- <li ng-share="share()">Share session</li> -->
+      </ul>
+    </div>
+
+    <footer>
+      <p>Built by <a href="http://fouad.co">Fouad</a> & <a href="http://rin.io">Catherine</a>.</p>
+      <p>Icon designed by <a href="http://www.thenounproject.com/bnvk">Brennan Novak</a> from the <a href="http://www.thenounproject.com">Noun Project</a>.</p>
+    </footer>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/colorbrewer/colorbrewer.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.min.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>
+    <script src="bower_components/d3/d3.min.js"></script>
+    <script src="bower_components/pouchdb/dist/pouchdb-nightly.js"></script>
+    <!-- <script src="bower_components/pouchdb/dist/performance-bundle.js"></script> -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/wikiweb.js -->
+    <script src="scripts/wikiweb.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

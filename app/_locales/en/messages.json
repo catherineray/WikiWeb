@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "wikiweb",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Chrome extension for wikipedia page hopping",
+    "description": "The description of the application"
+  }
+}

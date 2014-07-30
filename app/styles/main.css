@@ -1,0 +1,197 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.popup {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Roboto';
+  width: 200px;
+  padding: 10px;
+  min-height: 150px;
+}
+
+.popup .thin {
+  margin: 10px 0;
+  font-weight: 100;
+  color: rgba(0,0,0,.65);
+}
+
+.popup .session-item {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.popup input {
+  width: 100%;
+  text-align: center;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  background: rgba(0,0,0,.15);
+  color: rgba(0,0,0,.85);
+  /*color: #fefefe;*/
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: .25s border ease-in;
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(0,0,0,.45);
+}
+
+input:focus {
+  border-color: #489ABB;
+  outline: none;
+}
+
+.bttn {
+  display: inline-block;
+  border: none;
+  background: #e7e7e7;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bttn:active {
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.15);
+}
+
+.bttn:focus {
+  outline: none;
+}
+
+.options--page {
+  background: #e7e7e7;
+  font-family: 'Roboto';
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.paper {
+  max-width: 600px;
+  min-height: 300px;
+  margin: 25px auto;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+
+.paper h2,
+.paper h3,
+.paper h4,
+.paper h6 {
+  color: rgba(0,0,0,.65);
+  font-weight: 400;
+  text-align: left;
+}
+
+.paper h6 {
+  color: rgba(0,0,0,.85);
+}
+
+.paper input {
+  height: 26px;
+  padding: 6px;
+}
+
+.paper svg {
+  float: left;
+  margin-top: -274px;
+  margin-left: -25px;
+}
+
+.paper i {
+  margin: 0 5px;
+}
+
+.paper--body {
+  padding: 25px;
+  z-index: 10;
+}
+
+.paper--title,
+.paper--link {
+  text-align: left;
+}
+
+.paper--link {
+  margin-top: 113px;
+}
+
+.paper--link a {
+  color: #37474f;
+}
+
+.paper--title a {
+  font-weight: 200;
+  color: #455a64;
+}
+
+.paper--open {
+  position: absolute;
+  top: 45px;
+  right: 35px;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+  cursor: pointer;
+}
+
+.paper--open:hover {
+  color: #666;
+}
+
+.paper:hover .paper--open {
+  opacity: 1;
+}
+
+.paper--dropdown {
+  position: absolute;
+  width: 160px;
+  top: 65px;
+  right: 25px;
+  padding: 0;
+  border-radius: 4px;
+  text-align: center;
+  background: #FFF;
+  box-shadow: 0 2px 7px 0 rgba(0,0,0,.36);
+}
+
+.paper--dropdown li {
+  padding: 8px 4px;
+  list-style-type: none;
+}
+
+.paper--dropdown li:hover {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.options--paper {
+
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+.centered {
+  text-align: center;
+}
+
+footer {
+  color: rgba(50,50,50,.35);
+}
+
+footer a {
+  color: rgba(50,50,50,.45);
+}
